@@ -1,18 +1,18 @@
-.lista_producto {
+.product-card {
     display: flex;
     flex-wrap: wrap; 
     gap: 10px;       
 }
-.imagen_producto{
+.container-image {
     width: 90px;
     height: 90px;
 }
-.info_producto{
+.product-info {
     background-color: aqua;
     width: 90px;
     height: 90px;
 }
-.imagen{
+.product-image{
     width: 90px;
     height: 90px;
 }
