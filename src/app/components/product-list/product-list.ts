@@ -49,10 +49,31 @@ export class ProductList {
     },
     {
       id: 5,
-      name: 'Producto 6',
+      name: 'Producto 5',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       price: 34.75,
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh6SVWn3-bbQKUT6l9ULy33xZzQgsojgkJ4Q&s'
+    },
+    {
+      id: 6,
+      name: 'Producto 6',
+      description:'survived not only five centuries, but also the leap into electronic typesetting',
+      price: 21.99,
+      imageUrl: 'https://www.elindependiente.com/wp-content/uploads/2023/07/9788408258360-552x808.jpg'
+    },
+    {
+      id: 7,
+      name: 'Producto 7',
+      description:'literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum',
+      price: 12.99,
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5Me_iZvblcadidtNuk7rv0LOxeBc2c0ar4Q&s'
+    },
+     {
+      id: 8,
+      name: 'Producto 8',
+      description:'Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in ',
+      price: 49.99,
+      imageUrl: 'https://www.egames.news/__export/1704135060245/sites/debate/img/2023/12/27/-cu-les_son_los_videojuegos_m-s_esperados_de_2024-.png_554688468.png'
     }
   ];
 }
