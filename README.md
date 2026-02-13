@@ -2,7 +2,15 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.3.
 
-## Acceder al ***codespace***
+
+- **Emplear dos fuentes/tipografías distintas:**
+  
+  - ***una para el nombre del producto***
+  - ***otra para la descripción y el precio***
+    
+- **Emplear un tamaño de letra más grande para el nombre del producto y otro tamaño de letra un poco más pequeño(6px-8px menos) para la descripción** 
+
+## Acceder al ***Codespace***
 
 - asegurarse que nos encontramos en el proyecto **bestashop-web**
 
@@ -12,7 +20,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 - clickar sobre el ***codespace*** desde el que se quiera trabajar
 
-## Comandos en Codespace
+## Comandos en ***Codespace***
 
 **Para ejecutar cualquier comando de Angular, antes se debe incluir **npm run****
 ***Comandos de ejemplo***
