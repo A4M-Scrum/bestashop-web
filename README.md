@@ -2,6 +2,30 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.3.
 
+## Acceder al ***codespace***
+
+- asegurarse que nos encontramos en el proyecto **bestashop-web**
+
+- clickar sobre ***code*** (desplegable en verde)
+
+- pestaña ***Codespaces*** (pestaña de la derecha)
+
+- clickar sobre el ***codespace*** desde el que se quiera trabajar
+
+## Comandos en Codespace
+
+**Para ejecutar cualquier comando de Angular, antes se debe incluir **npm run****
+***Comandos de ejemplo***
+
+```bash
+npm run ng serve
+npm run ng s
+npm run ng g component
+npm run ng g c
+npm run ng g service
+npm run ng g s
+```
+
 ## Development server
 
 To start a local development server, run:
