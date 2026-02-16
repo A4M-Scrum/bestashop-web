@@ -1,0 +1,21 @@
+<ul class="product-list">
+    @for (product of products; track product.id) {
+    <li class="product-card">
+
+        <div class="container-image">
+            <img class="product-image" *ngIf="product.imageUrl" [src]="product.imageUrl" [alt]="product.name">
+        </div>
+
+        <div class="product-info">
+            <h3>{{ product.name }}</h3>
+
+            <p>{{ product.description }}</p>
+
+            <span class="price">
+                {{ product.price }}
+            </span>
+        </div>
+
+    </li>
+    }
+</ul>
