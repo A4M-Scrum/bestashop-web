@@ -12,7 +12,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Acceder al ***Codespace***
 
-- asegurarse que nos encontramos en el proyecto **bestashop-web**
+- asegurarse que nos encontramos en el proyecto **bestashop-web** y en la rama correcta
 
 - clickar sobre ***code*** (desplegable en verde)
 
@@ -23,7 +23,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 ## Comandos en ***Codespace***
 
 **Para ejecutar cualquier comando de Angular, antes se debe incluir **npm run****
-***Comandos de ejemplo***
+***Comandos de ejemplo para correr la aplicación y crear componentes o servicios***
 
 ```bash
 npm run ng serve
