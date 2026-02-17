@@ -3,7 +3,9 @@
     <li class="product-card">
 
         <div class="container-image">
-            <img class="product-image" *ngIf="product.imageUrl" [src]="product.imageUrl" [alt]="product.name">
+            @if (product.imageUrl) {
+            <img class="product-image" [src]="product.imageUrl" [alt]="product.name">
+            }
         </div>
 
         <div class="product-info">

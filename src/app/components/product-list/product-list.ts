@@ -1,13 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
 
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  imageUrl: string;
-}
+import { Product, ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -17,63 +12,17 @@ interface Product {
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
 })
-export class ProductList {
-  products: Product[] = [
-    {
-      id: 1,
-      name: 'Producto 1',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      price: 19.99,
-      imageUrl: 'https://babyshowerchocolate.com/cdn/shop/articles/chocolate_hero1-d62e5444a8734f8d8fe91f5631d51ca5.jpg?v=1694433941'
-    },
-    {
-      id: 2,
-      name: 'Producto 2',
-      description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      price: 29.99,
-      imageUrl: 'https://elixirperfumes.es/cdn/shop/files/81LNkF9P2LL.jpg?v=1734436434'
-    },
-    {
-      id: 3,
-      name: 'Producto 3',
-      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      price: 39.99,
-      imageUrl: 'data:image/jpeg;base64,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'
-    },
-    {
-      id: 4,
-      name: 'Producto 4',
-      description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse.',
-      price: 49.99,
-      imageUrl: 'https://cdn.grupoelcorteingles.es/statics/manager/contents/images/uploads/2025/09/B1bNsPMl3xx.jpeg?impolicy=Resize&width=800&height=800'
-    },
-    {
-      id: 5,
-      name: 'Producto 5',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      price: 34.75,
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh6SVWn3-bbQKUT6l9ULy33xZzQgsojgkJ4Q&s'
-    },
-    {
-      id: 6,
-      name: 'Producto 6',
-      description:'survived not only five centuries, but also the leap into electronic typesetting',
-      price: 21.99,
-      imageUrl: 'https://www.elindependiente.com/wp-content/uploads/2023/07/9788408258360-552x808.jpg'
-    },
-    {
-      id: 7,
-      name: 'Producto 7',
-      description:'literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum',
-      price: 12.99,
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5Me_iZvblcadidtNuk7rv0LOxeBc2c0ar4Q&s'
-    },
-     {
-      id: 8,
-      name: 'Producto 8',
-      description:'Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in ',
-      price: 49.99,
-      imageUrl: 'https://www.egames.news/__export/1704135060245/sites/debate/img/2023/12/27/-cu-les_son_los_videojuegos_m-s_esperados_de_2024-.png_554688468.png'
-    }
-  ];
+export class ProductList implements OnInit {
+  constructor(private productService: ProductService, private cdRef: ChangeDetectorRef) { }
+
+  products: Product[] = [];
+
+  ngOnInit(): void {
+    this.productService.getProducts().subscribe(data => {
+      this.products = data;
+      this.cdRef.detectChanges();
+
+      console.log(this.products);
+    });
+  }
 }
