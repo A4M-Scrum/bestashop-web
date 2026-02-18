@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 
 // modelo provisional
 export interface Product {
-  id: number;
+  product_id: number;
   name: string;
   description: string;
   price: number;
-  imageUrl: string;
+  image_url: string;
 }
 
 @Injectable({
@@ -27,7 +27,7 @@ export class ProductService {
   getProductById(id: number): Observable<Product | undefined> {
     return new Observable(observer => {
       this.getProducts().subscribe(products => {
-        const product = products.find(p => p.id === id);
+        const product = products.find(p => p.product_id === id);
         observer.next(product);
         observer.complete();
       });
