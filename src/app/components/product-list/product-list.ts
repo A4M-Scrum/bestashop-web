@@ -3,12 +3,16 @@ import { Component, OnInit } from '@angular/core';
 import { ChangeDetectorRef } from '@angular/core';
 
 import {  ProductService } from '../../services/product.service';
+
 import { Product } from '../../models/product.model';
+
+import { ProductCard } from '../product-card/product-card';
 
 @Component({
   selector: 'app-product-list',
   imports: [
     CommonModule,
+    ProductCard,
   ],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
