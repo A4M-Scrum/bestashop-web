@@ -17,8 +17,12 @@ import { ProductCard } from '../product-card/product-card';
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
 })
+
 export class ProductList implements OnInit {
-  constructor(private productService: ProductService, private cdRef: ChangeDetectorRef) { }
+  constructor(
+    private productService: ProductService, 
+    private cdRef: ChangeDetectorRef
+  ) { }
 
   products: Product[] = [];
 
