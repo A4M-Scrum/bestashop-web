@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 import { LoginService } from '../../services/login.service';
 
@@ -24,13 +24,19 @@ export class Header {
 
   constructor(
     public loginService: LoginService,
-    private readonly cartService: CartService
+    private readonly cartService: CartService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     this.cartService.getCart().subscribe(cart => {
       this.cartCount = cart.length;
     });
+  }
+
+  logout(): void {
+    this.loginService.logout();
+    this.router.navigate(['/home']);
   }
 
   get currentUser() {

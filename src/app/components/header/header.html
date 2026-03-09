@@ -17,7 +17,7 @@
             <a class="link" routerLink="/register">Registrarse</a>
             } @else {
             <span>Hola, {{ currentUser!.name }}</span>
-            <button class="button" (click)="loginService.logout()">Cerrar sesión</button>
+            <button class="button" (click)="logout()">Cerrar sesión</button> <!-- (click)="loginService.logout()" -->
             }
         </div>
         
