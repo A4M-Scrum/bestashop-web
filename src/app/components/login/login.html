@@ -1,0 +1,30 @@
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+
+    @if (!currentUser) {
+    <div>
+        <label for="email">Correo electrónico</label>
+        <input id="email" type="email" name="email" [(ngModel)]="email" required />
+    </div>
+
+    <button type="submit">
+        Acceder
+    </button>
+
+        @if (message) {
+        <p>
+            {{ message }}
+        </p>
+        }
+    }
+
+    @if (currentUser) {
+    <p>
+        {{ message }}
+    </p>
+
+    <button type="button" (click)="logout()">
+        Cerrar sesión
+    </button>
+    }
+
+</form>
