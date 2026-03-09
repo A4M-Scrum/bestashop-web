@@ -25,8 +25,16 @@ export class CartService {
   }
 
   removeProduct(productId: number): void {
-    const updatedCart = this.cartSubject.value.filter(p => p.product_id !== productId);
-    this.updateCart(updatedCart);
+
+    const cart = [...this.cartSubject.value];
+
+    const index = cart.findIndex(p => p.product_id === productId);
+
+    if (index !== -1) {
+      cart.splice(index, 1);
+    }
+
+    this.updateCart(cart);
   }
 
   clearCart(): void {
@@ -35,6 +43,12 @@ export class CartService {
 
   getCartCount(): number {
     return this.cartSubject.value.length;
+  }
+
+  getCartTotal(): number {
+    return this.cartSubject.value.reduce((total, product) => {
+      return total + product.price;
+    }, 0);
   }
 
   private loadCart(): Product[] {

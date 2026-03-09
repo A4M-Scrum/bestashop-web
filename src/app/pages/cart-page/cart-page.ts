@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CartService } from '../../services/cart.service';
 import { Product } from '../../models/product.model';
+import { OfferService } from '../../services/offer.service';
 
 @Component({
   selector: 'app-cart-page',
@@ -14,15 +15,32 @@ import { Product } from '../../models/product.model';
 export class CartPage implements OnInit {
 
   cartItems: Product[] = [];
+  cartTotal = 0;
 
-  constructor(private cartService: CartService) { }
+  constructor(
+    private readonly cartService: CartService,
+    public offerService: OfferService) { }
 
   ngOnInit(): void {
 
     this.cartService.getCart().subscribe(cart => {
+
       this.cartItems = cart;
+
+      this.cartTotal = cart.reduce((total, product) => {
+
+        if (this.offerService.hasDiscount(product)) {
+          return total + this.offerService.getFinalPrice(product);
+        }
+
+        return total + product.price;
+      }, 0);
     });
 
+  }
+
+  removeFromCart(productId: number): void {
+    this.cartService.removeProduct(productId);
   }
 
 }
