@@ -1,6 +1,8 @@
+<app-search-product (searchChange)="onSearch($event)"></app-search-product>
+
 <ul class="product-list">
     @for (product of products; track product.product_id) {
-    <li class="product-card">   
+    <li class="product-item">   
         <app-product-card [product]="product"></app-product-card>
     </li>
     }
