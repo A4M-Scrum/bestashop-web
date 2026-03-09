@@ -26,6 +26,7 @@ export class ProductList {
 
   products$!: Observable<Product[]>;
   private searchTerm = '';
+  private onlyOnSale = false;
 
   constructor(private productService: ProductService) {
     this.products$ = this.productService.getProducts();
@@ -77,4 +78,22 @@ export class ProductList {
       }) // map.fin
     ); // this.products$
   } // onSort.fin
+
+  // filtro para el listado de productos en oferta
+  onSaleFilter(onlySale: boolean) {
+
+    this.onlyOnSale = onlySale;
+
+    this.products$ = this.productService.getProducts().pipe(
+      map(products => {
+
+        if (this.onlyOnSale) {
+          return products.filter(p => p.onSale);
+        }
+
+        return products;
+
+      })
+    );
+  } // onSaleFilter.fin
 }

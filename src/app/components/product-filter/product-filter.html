@@ -3,7 +3,6 @@
     <label for="sort">Ordenar por:</label>
 
     <select id="sort" (change)="onSortChange($event)">
-
         <!-- ordenar por nombre del producto -->
         <option value="">Sin orden</option>
         <option value="name-asc">
@@ -20,7 +19,15 @@
         <option value="price-desc">
             Precio (mayor a menor)
         </option>
-
     </select>
+
+    <!-- productos en oferta: 30% descuento -->
+    <div>
+        <label for="saleFilter">
+            Mostrar solo productos en oferta
+        </label>
+
+        <input id="saleFilter" type="checkbox" (change)="onSaleFilterChange($event)">
+    </div>
 
 </div>
