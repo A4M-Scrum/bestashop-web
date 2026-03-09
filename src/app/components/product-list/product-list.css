@@ -1,34 +1,37 @@
-.product-list {
-    display: grid;
-    gap: var(--space-2);
-    text-align: center;
-    max-width: 90%;
+:host {
+    display: block;
+    padding: var(--space-4) 0;
 }
 
-.product-card {
+/* ── Barra de controles (search + filter) ───────────────────── */
+
+:host>app-search-product,
+:host>app-product-filter {
+    display: block;
+}
+
+:host>app-search-product {
+    margin-bottom: var(--space-3);
+}
+
+:host>app-product-filter {
+    padding-bottom: var(--space-3);
+    border-bottom: var(--border-width) solid var(--color-border);
+    margin-bottom: var(--space-4);
+}
+
+/* ── Lista ──────────────────────────────────────────────────── */
+
+.product-list {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-2);
+    gap: var(--space-3);
 }
 
-.container-image {
-    width: 15rem;
-    height: 15rem;
-}
+/* ── Item ───────────────────────────────────────────────────── */
 
-.product-info {
-    width: 30rem;
-    height: 100%;
-
-    background-color: transparent; 
-    border: 1px solid #ccc; 
-    border-radius: 8px;
-    padding: 4rem;
-    box-shadow: 0 1px 3px rgba(1, 10, 9, 0.08);
-
-}
-
-.product-image {
-    width: 100%;
-    height: 100%;
+.product-item {
+    /* La tarjeta tiene width: 30rem fijo,
+       el item la envuelve sin añadir restricciones */
+    display: contents;
 }
