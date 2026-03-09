@@ -1,0 +1,35 @@
+.product-container { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 2rem; 
+    width: 100%;
+}
+    .container-image {
+    width: 15rem;
+    height: 15rem;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.product-info {
+    width: 30rem;
+    height: 100%;
+    background-color: transparent; 
+    border: 1px solid #ccc; 
+    border-radius: 8px;
+    padding: 4rem;
+    box-shadow: 0 1px 3px rgba(1, 10, 9, 0.08);
+
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    height: 100%; 
+    object-fit: cover; 
+}
+.product-container {
+    flex-direction: row; 
+}
