@@ -5,7 +5,7 @@ import { User } from '../models/user.model';
   providedIn: 'root'
 })
 export class LoginService {
-
+  
   private readonly storageKey = 'users';
   private readonly sessionKey = 'currentUser';
 
@@ -16,9 +16,13 @@ export class LoginService {
     return users ? JSON.parse(users) : [];
   }
 
-  login(email: string): User | null {
+  login(email: string, password: string): User | null {
+
     const users = this.getUsers();
-    const user = users.find(u => u.email === email);
+
+    const user = users.find(
+      u => u.email === email && u.password === password
+    );
 
     if (user) {
       localStorage.setItem(this.sessionKey, JSON.stringify(user));
@@ -36,4 +40,5 @@ export class LoginService {
     const user = localStorage.getItem(this.sessionKey);
     return user ? JSON.parse(user) : null;
   }
+
 }

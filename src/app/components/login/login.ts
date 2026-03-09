@@ -16,25 +16,29 @@ import { LoginService } from '../../services/login.service';
   styleUrl: './login.css',
 })
 export class Login {
+  
   email: string = '';
+  password: string = '';
+
   message: string = '';
   isError: boolean = false;
+
   currentUser: User | null = null;
 
   constructor(private loginService: LoginService) { }
 
   onSubmit(): void {
 
-    if (!this.email) {
-      this.message = 'El correo electrónico es obligatorio';
+    if (!this.email || !this.password) {
+      this.message = 'Todos los campos son obligatorios';
       this.isError = true;
       return;
     }
 
-    const user = this.loginService.login(this.email);
+    const user = this.loginService.login(this.email, this.password);
 
     if (!user) {
-      this.message = 'Usuario no registrado';
+      this.message = 'Credenciales incorrectas';
       this.isError = true;
       this.currentUser = null;
       return;
@@ -43,7 +47,9 @@ export class Login {
     this.currentUser = user;
     this.message = `Bienvenido, ${user.name}`;
     this.isError = false;
+
     this.email = '';
+    this.password = '';
   }
 
   logout(): void {

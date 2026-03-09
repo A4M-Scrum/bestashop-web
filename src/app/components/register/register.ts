@@ -16,6 +16,7 @@ import { RegisterService } from '../../services/register.service';
 export class Register {
   name: string = '';
   email: string = '';
+  password: string = '';
 
   message: string = '';
   isError: boolean = false;
@@ -24,7 +25,7 @@ export class Register {
 
   onSubmit(): void {
 
-    if (!this.name || !this.email) {
+    if (!this.name || !this.email || !this.password) {
       this.message = 'Todos los campos son obligatorios';
       this.isError = true;
       return;
@@ -32,7 +33,8 @@ export class Register {
 
     const result = this.registerService.register({
       name: this.name,
-      email: this.email
+      email: this.email,
+      password: this.password
     });
 
     if (!result) {
@@ -46,5 +48,6 @@ export class Register {
 
     this.name = '';
     this.email = '';
+    this.password = '';
   }
 }
