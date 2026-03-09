@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Product } from '../../models/product.model';
 
 import { OfferService } from '../../services/offer.service';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-card',
@@ -15,5 +16,11 @@ import { OfferService } from '../../services/offer.service';
 export class ProductCard {
   @Input() product!: Product;
 
-  constructor(public offerService: OfferService) { }
+  constructor(
+    private cartService: CartService,
+    public offerService: OfferService) { }
+
+  addToCart(): void {
+    this.cartService.addProduct(this.product);
+  }
 }

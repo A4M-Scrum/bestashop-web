@@ -1,6 +1,6 @@
 .product-container {
     height: 18rem;
-    width: 30rem;
+    width: 35rem;
     padding: var(--space-3);
     display: flex;
     gap: var(--space-3);
@@ -126,7 +126,6 @@
     padding-top: var(--space-2);
     border-top: var(--border-width) solid var(--color-border);
     width: 100%;
-    margin-top: auto;
 }
 
 .normal-price {
@@ -151,6 +150,43 @@
     font-weight: var(--weight-medium);
     color: var(--color-accent);
     letter-spacing: var(--tracking-tight);
+}
+
+/* ── Botón añadir al carrito ────────────────────────────────── */
+
+.product-info .button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    width: 100%;
+    margin-top: auto;
+    padding: var(--space-1) var(--space-3);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--color-text-inverse);
+    background-color: var(--color-accent);
+    border: var(--border-width) solid var(--color-accent);
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.product-info .button:hover {
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+}
+
+.product-info .button:active {
+    transform: translate(1px, 1px);
+}
+
+.product-info .button .icon {
+    flex-shrink: 0;
 }
 
 /* ── Tema claro ─────────────────────────────────────────────── */
