@@ -1,14 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CartService } from '../../services/cart.service';
-import { Product } from '../../models/product.model';
 import { OfferService } from '../../services/offer.service';
+import { CartService } from '../../services/cart.service';
+
+import { Product } from '../../models/product.model';
+
+import { Checkout } from '../../components/checkout/checkout';
 
 @Component({
   selector: 'app-cart-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    Checkout,
+  ],
   templateUrl: './cart-page.html',
   styleUrl: './cart-page.css'
 })

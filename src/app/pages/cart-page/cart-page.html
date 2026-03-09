@@ -38,9 +38,9 @@
 }
 
 @if (cartItems.length > 0) {
-
 <div class="cart-total">
     <h3>Total: {{ cartTotal }} €</h3>
 </div>
-
 }
+
+<app-checkout [cartItems]="cartItems"></app-checkout>
