@@ -7,6 +7,7 @@ import { Product } from '../../models/product.model';
 
 import { ProductCard } from '../product-card/product-card';
 import { SearchProduct } from '../search-product/search-product';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -19,29 +20,26 @@ import { SearchProduct } from '../search-product/search-product';
   styleUrl: './product-list.css',
 })
 
-export class ProductList implements OnInit {
+export class ProductList {
 
-  constructor(
-    private productService: ProductService
-  ) { }
+  products$!: Observable<Product[]>;
+  private searchTerm = '';
 
-  products: Product[] = [];
-  filteredProducts: Product[] = [];
-
-  ngOnInit(): void {
-    this.productService.getProducts().subscribe(data => {
-      this.products = data;
-      this.filteredProducts = data;
-    });
+  constructor(private productService: ProductService) {
+    this.products$ = this.productService.getProducts();
   }
 
   onSearch(term: string) {
 
-    const search = term.toLowerCase();
+    this.searchTerm = term.toLowerCase();
 
-    this.filteredProducts = this.products.filter(product =>
-      product.name.toLowerCase().includes(search) ||
-      product.description.toLowerCase().includes(search)
+    this.products$ = this.productService.getProducts().pipe(
+      map(products =>
+        products.filter(product =>
+          product.name.toLowerCase().includes(this.searchTerm) ||
+          product.description.toLowerCase().includes(this.searchTerm)
+        )
+      )
     );
   }
 }
