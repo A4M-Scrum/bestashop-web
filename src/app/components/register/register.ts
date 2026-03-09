@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { RegisterService } from '../../services/register.service';
 
 @Component({
   selector: 'app-register',
-  imports: [],
+  imports: [
+    CommonModule,
+    FormsModule,
+  ],
   templateUrl: './register.html',
   styleUrl: './register.css',
 })
