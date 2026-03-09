@@ -1,19 +1,23 @@
 <header class="header">
     <nav class="navbar">
         <!-- nombre de la empresa -->
-        <a class="link" routerLink="/home"><h1>Home</h1></a>
+        <a class="link" routerLink="/home">
+            <h1>Home</h1>
+        </a>
     </nav>
 
+    <div class="header-controls">
+        <div class="auth">
+            @if (!currentUser) {
+            <a class="link" routerLink="/login">Acceder</a>
+            <a class="link" routerLink="/register">Registrarse</a>
+            } @else {
+            <span>Hola, {{ currentUser!.name }}</span>
+            <button class="button" (click)="loginService.logout()">Cerrar sesión</button>
+            }
+        </div>
 
-    <div class="auth">
-        @if (!currentUser) {
-        <a class="link" routerLink="/login">Acceder</a>
-        <a class="link" routerLink="/register">Registrarse</a>
-        } @else {
-        <span>Hola, {{ currentUser!.name }}</span>
-        <button class="button" (click)="loginService.logout()">Cerrar sesión</button>
-        }
+        <app-theme class="theme"></app-theme>
     </div>
 
-    <app-theme class="theme"></app-theme>
 </header>

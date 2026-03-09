@@ -35,6 +35,15 @@
     color: var(--color-accent);
 }
 
+/* ── Controles derechos (auth + theme) ──────────────────────── */
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    /* El separador lo gestiona .theme con border-left */
+}
+
 /* ── Auth ───────────────────────────────────────────────────── */
 
 .auth {
@@ -43,7 +52,6 @@
     gap: var(--space-3);
 }
 
-/* Links de acceso / registro */
 .auth .link {
     font-family: var(--font-mono);
     font-size: var(--text-xs);
@@ -58,14 +66,12 @@
     color: var(--color-accent);
 }
 
-/* Separador visual entre los dos links */
 .auth .link+.link::before {
     content: '/';
     margin-right: var(--space-3);
     color: var(--color-text-muted);
 }
 
-/* Saludo usuario autenticado */
 .auth span {
     font-family: var(--font-mono);
     font-size: var(--text-xs);
@@ -80,7 +86,6 @@
     color: var(--color-accent);
 }
 
-/* Botón cerrar sesión */
 .auth .button {
     font-family: var(--font-mono);
     font-size: var(--text-xs);
@@ -107,4 +112,12 @@
 .auth .button:active {
     transform: translate(2px, 2px);
     box-shadow: none;
+}
+
+/* ── Theme toggle ───────────────────────────────────────────── */
+
+.theme {
+    margin-left: var(--space-3);
+    padding-left: var(--space-3);
+    border-left: var(--border-width) solid var(--color-border);
 }
