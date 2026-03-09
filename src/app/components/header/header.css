@@ -20,7 +20,6 @@
 .navbar {
     display: flex;
     align-items: center;
-    gap: var(--space-md);
 }
 
 .navbar .link h1 {
@@ -41,7 +40,7 @@
 .header-controls {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
+    gap: 0; /* El separador lo gestiona .theme con border-left */
 }
 
 /* ── Auth ───────────────────────────────────────────────────── */
@@ -66,7 +65,7 @@
     color: var(--color-accent);
 }
 
-.auth .link+.link::before {
+.auth .link + .link::before {
     content: '/';
     margin-right: var(--space-3);
     color: var(--color-text-muted);
@@ -112,6 +111,54 @@
 .auth .button:active {
     transform: translate(2px, 2px);
     box-shadow: none;
+}
+
+/* ── Carrito ────────────────────────────────────────────────── */
+
+.cart-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: var(--color-text-secondary);
+    border: var(--border-width) solid var(--color-border);
+    transition:
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        background-color var(--transition-fast);
+}
+
+.cart-icon:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    background-color: var(--color-accent-subtle);
+}
+
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 3px;
+    background-color: var(--color-accent);
+    color: var(--color-text-inverse);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: var(--weight-medium);
+    letter-spacing: 0;
+    line-height: 16px;
+    text-align: center;
+    /* Único border-radius justificado: es una pastilla de contador */
+    border-radius: 2px;
+    /* Ocultar si es 0 */
+    display: none;
+}
+
+.cart-count:not(:empty) {
+    display: block;
 }
 
 /* ── Theme toggle ───────────────────────────────────────────── */
