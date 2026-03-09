@@ -1,0 +1,17 @@
+<h2>Carrito</h2>
+
+@if (cartItems.length === 0) {
+
+<p>Tu carrito está vacío</p>
+
+} @else {
+
+<ul>
+    @for (item of cartItems; track item.product_id) {
+    <li>
+        {{ item.name }} - {{ item.price }}
+    </li>
+    }
+</ul>
+
+}
