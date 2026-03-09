@@ -1,12 +1,16 @@
+/* ============================================================
+   PRODUCT CARD
+   ============================================================ */
+
 .product-container {
-    height: 20rem;
+    height: 15rem;
     width: 30rem;
     padding: var(--space-3);
     display: flex;
     gap: var(--space-3);
     background-color: var(--color-bg-alt);
     border: var(--border-width) solid var(--color-border);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
     transition:
@@ -16,7 +20,7 @@
 
 .product-container:hover {
     background-color: var(--color-bg-raised);
-    box-shadow: var(--shadow-lg);
+    box-shadow: none;
 }
 
 /* ── Imagen ─────────────────────────────────────────────────── */
@@ -151,4 +155,15 @@
     font-weight: var(--weight-medium);
     color: var(--color-accent);
     letter-spacing: var(--tracking-tight);
+}
+
+/* ── Tema claro ─────────────────────────────────────────────── */
+
+body.light-theme .product-container {
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 3px rgba(1, 10, 9, 0.08);
+}
+
+body.light-theme .product-container:hover {
+    box-shadow: none;
 }
