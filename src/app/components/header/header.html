@@ -1,0 +1,16 @@
+<header class="header">
+    <nav class="navbar">
+
+    </nav>
+    <!-- nombre de la empresa -->
+
+    <div class="auth">
+        @if (!currentUser) {
+        <a routerLink="/login">Acceder</a>
+        <a routerLink="/register">Registrarse</a>
+        } @else {
+        <span>Hola, {{ currentUser!.name }}</span>
+        <button (click)="loginService.logout()">Cerrar sesión</button>
+        }
+    </div>
+</header>
