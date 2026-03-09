@@ -1,0 +1,110 @@
+:host {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: var(--z-overlay);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding-inline: var(--space-4);
+    background-color: var(--color-bg);
+    border-bottom: var(--border-width) solid var(--color-border);
+}
+
+/* ── Navbar / logo ──────────────────────────────────────────── */
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .link h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    letter-spacing: var(--tracking-wider);
+    color: var(--color-text-primary);
+    line-height: 1;
+    transition: color var(--transition-fast);
+}
+
+.navbar .link:hover h1 {
+    color: var(--color-accent);
+}
+
+/* ── Auth ───────────────────────────────────────────────────── */
+
+.auth {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+/* Links de acceso / registro */
+.auth .link {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+    white-space: nowrap;
+}
+
+.auth .link:hover {
+    color: var(--color-accent);
+}
+
+/* Separador visual entre los dos links */
+.auth .link+.link::before {
+    content: '/';
+    margin-right: var(--space-3);
+    color: var(--color-text-muted);
+}
+
+/* Saludo usuario autenticado */
+.auth span {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.auth span::before {
+    content: '—';
+    margin-right: var(--space-2);
+    color: var(--color-accent);
+}
+
+/* Botón cerrar sesión */
+.auth .button {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    background: transparent;
+    border: var(--border-width) solid var(--color-border);
+    padding: var(--space-1) var(--space-3);
+    cursor: pointer;
+    transition:
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.auth .button:hover {
+    color: var(--color-error);
+    border-color: var(--color-error);
+    box-shadow: 2px 2px 0 var(--color-error);
+}
+
+.auth .button:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
