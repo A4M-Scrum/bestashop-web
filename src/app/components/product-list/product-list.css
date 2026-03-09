@@ -1,13 +1,10 @@
 .product-list {
+    max-width: 90%;
+
     display: grid;
     gap: var(--space-2);
-    text-align: center;
-    max-width: 90%;
 }
 
-.product-card {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
+.product-item {
+    padding: var(--space-2);
 }
-
