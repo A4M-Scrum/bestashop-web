@@ -20,6 +20,7 @@
 .navbar {
     display: flex;
     align-items: center;
+    gap: var(--space-md);
 }
 
 .navbar .link h1 {
@@ -40,7 +41,7 @@
 .header-controls {
     display: flex;
     align-items: center;
-    gap: 0; /* El separador lo gestiona .theme con border-left */
+    gap: 0;
 }
 
 /* ── Auth ───────────────────────────────────────────────────── */
@@ -65,7 +66,7 @@
     color: var(--color-accent);
 }
 
-.auth .link + .link::before {
+.auth .link+.link::before {
     content: '/';
     margin-right: var(--space-3);
     color: var(--color-text-muted);
@@ -117,6 +118,7 @@
 
 .cart-icon {
     position: relative;
+    margin-left: var(--space-sm);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,6 +126,7 @@
     height: 36px;
     color: var(--color-text-secondary);
     border: var(--border-width) solid var(--color-border);
+
     transition:
         color var(--transition-fast),
         border-color var(--transition-fast),
