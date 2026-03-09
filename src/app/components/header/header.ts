@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { LoginService } from '../../services/login.service';
 
 import { Theme } from '../theme/theme';
+import { CartService } from '../../services/cart.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +20,18 @@ import { Theme } from '../theme/theme';
 })
 export class Header {
 
-  constructor(public loginService: LoginService) { }
+  cartCount = 0;
+
+  constructor(
+    public loginService: LoginService,
+    private readonly cartService: CartService
+  ) { }
+
+  ngOnInit(): void {
+    this.cartService.getCart().subscribe(cart => {
+      this.cartCount = cart.length;
+    });
+  }
 
   get currentUser() {
     return this.loginService.getCurrentUser();

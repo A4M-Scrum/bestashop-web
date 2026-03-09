@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 
 import { Product } from '../models/product.model';
 
@@ -7,11 +7,12 @@ import { Product } from '../models/product.model';
   providedIn: 'root',
 })
 export class CartService {
+
   private readonly storageKey = 'cart_items';
 
   private cartSubject: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>(this.loadCart());
 
-  constructor() {}
+  constructor() { }
 
   getCart(): Observable<Product[]> {
     return this.cartSubject.asObservable();

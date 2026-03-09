@@ -41,8 +41,7 @@
 .header-controls {
     display: flex;
     align-items: center;
-    gap: 0;
-    /* El separador lo gestiona .theme con border-left */
+    gap: var(--space-sm);
 }
 
 /* ── Auth ───────────────────────────────────────────────────── */
