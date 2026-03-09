@@ -1,59 +1,352 @@
-
 [
-  {
-      "id": 1,
-      "name": "Producto 1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "price": 19.99,
-      "image_url": "https://babyshowerchocolate.com/cdn/shop/articles/chocolate_hero1-d62e5444a8734f8d8fe91f5631d51ca5.jpg?v=1694433941"
-  },
-  {
-      "id": 2,
-      "name": "Producto 2",
-      "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "price": 29.99,
-      "image_url": "https: //elixirperfumes.es/cdn/shop/files/81LNkF9P2LL.jpg?v=1734436434"
-  },
-  {
-      "id": 3,
-      "name": "Producto 3",
-      "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-      "price": 39.99,
-      "image_url": "data:image/jpeg;base64,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"
-  },
-  {
-      "id": 4,
-      "name": "Producto 4",
-      "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse.",
-      "price": 49.99,
-      "image_url": "https://cdn.grupoelcorteingles.es/statics/manager/contents/images/uploads/2025/09/B1bNsPMl3xx.jpeg?impolicy=Resize&width=800&height=800"
-  },
-  {
-      "id": 5,
-      "name": "Producto 5",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "price": 34.75,
-      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh6SVWn3-bbQKUT6l9ULy33xZzQgsojgkJ4Q&s"
-  },
-  {
-      "id": 6,
-      "name": "Producto 6",
-      "description": "survived not only five centuries, but also the leap into electronic typesetting",
-      "price": 21.99,
-      "image_url": "https://www.elindependiente.com/wp-content/uploads/2023/07/9788408258360-552x808.jpg"
-  },
-  {
-      "id": 7,
-      "name": "Producto 7",
-      "description": "literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum",
-      "price": 12.99,
-      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5Me_iZvblcadidtNuk7rv0LOxeBc2c0ar4Q&s"
-  },
-  {
-      "id": 8,
-      "name": "Producto 8",
-      "description": "Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in ",
-      "price": 49.99,
-      "image_url": "https://www.egames.news/__export/1704135060245/sites/debate/img/2023/12/27/-cu-les_son_los_videojuegos_m-s_esperados_de_2024-.png_554688468.png"
-  }
+    {
+        "id": 1,
+        "name": "Producto 1",
+        "description": "Un artículo esencial diseñado para ofrecer durabilidad y un rendimiento excepcional en todas tus tareas diarias.",
+        "price": 25.50,
+        "image_url": "assets/products/product-1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Producto 2",
+        "description": "Este modelo destaca por su diseño ergonómico y materiales de alta calidad que aseguran una larga vida.",
+        "price": 12.99,
+        "image_url": "assets/products/product-2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Producto 3",
+        "description": "Una solución práctica y elegante que se adapta perfectamente a cualquier entorno de hogar u oficina moderna.",
+        "price": 45.00,
+        "image_url": "assets/products/product-3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Producto 4",
+        "description": "Disfruta de la máxima comodidad con este accesorio versátil creado bajo los más altos estándares de fabricación.",
+        "price": 89.95,
+        "image_url": "assets/products/product-4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Producto 5",
+        "description": "La combinación ideal entre tecnología avanzada y sencillez de uso para optimizar tu tiempo cada jornada.",
+        "price": 110.20,
+        "image_url": "assets/products/product-5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Producto 6",
+        "description": "Estructura robusta y acabados premium definen a este producto líder en su categoría dentro del mercado actual.",
+        "price": 34.15,
+        "image_url": "assets/products/product-6.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Producto 7",
+        "description": "Optimiza tu espacio con este diseño compacto que no sacrifica potencia ni funcionalidad en ningún momento.",
+        "price": 67.80,
+        "image_url": "assets/products/product-7.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Producto 8",
+        "description": "Herramienta indispensable que garantiza resultados profesionales con un esfuerzo mínimo gracias a su ingeniería de vanguardia.",
+        "price": 15.30,
+        "image_url": "assets/products/product-8.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Producto 9",
+        "description": "Estilo contemporáneo y funcionalidad superior se unen en este objeto pensado para usuarios altamente exigentes hoy.",
+        "price": 99.99,
+        "image_url": "assets/products/product-9.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Producto 10",
+        "description": "Ligero pero resistente, este artículo es el compañero ideal para quienes buscan movilidad y eficiencia constante.",
+        "price": 54.45,
+        "image_url": "assets/products/product-10.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Producto 11",
+        "description": "Siente la diferencia con materiales suaves al tacto que ofrecen una experiencia de usuario realmente inigualable.",
+        "price": 8.50,
+        "image_url": "assets/products/product-11.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Producto 12",
+        "description": "Versatilidad total para múltiples aplicaciones garantizando siempre la seguridad y el bienestar de toda tu familia.",
+        "price": 42.10,
+        "image_url": "assets/products/product-12.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Producto 13",
+        "description": "Un clásico renovado que incorpora las últimas tendencias estéticas sin perder su esencia funcional y práctica.",
+        "price": 75.25,
+        "image_url": "assets/products/product-13.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Producto 14",
+        "description": "Diseñado meticulosamente para reducir el impacto ambiental manteniendo un desempeño superior en condiciones de uso intensivo.",
+        "price": 115.00,
+        "image_url": "assets/products/product-14.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Producto 15",
+        "description": "Excelente relación calidad precio en un paquete completo que incluye todo lo necesario para comenzar inmediatamente.",
+        "price": 29.90,
+        "image_url": "assets/products/product-15.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Producto 16",
+        "description": "Potencia y precisión se encuentran en esta unidad compacta diseñada para los entusiastas de la eficiencia moderna.",
+        "price": 63.40,
+        "image_url": "assets/products/product-16.jpg"
+    },
+    {
+        "id": 17,
+        "name": "Producto 17",
+        "description": "Acabado minimalista que aporta un toque de sofisticación a cualquier estancia mientras cumple sus funciones perfectamente.",
+        "price": 19.15,
+        "image_url": "assets/products/product-17.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Producto 18",
+        "description": "La elección preferida por expertos debido a su fiabilidad probada y su facilidad de mantenimiento a largo plazo.",
+        "price": 88.00,
+        "image_url": "assets/products/product-18.jpg"
+    },
+    {
+        "id": 19,
+        "name": "Producto 19",
+        "description": "Un accesorio dinámico que se ajusta a tus necesidades cambiantes proporcionando estabilidad y soporte en todo momento.",
+        "price": 5.75,
+        "image_url": "assets/products/product-19.jpg"
+    },
+    {
+        "id": 20,
+        "name": "Producto 20",
+        "description": "Tecnología de última generación aplicada a un formato tradicional para mejorar la productividad de forma muy notable.",
+        "price": 105.60,
+        "image_url": "assets/products/product-20.jpg"
+    },
+    {
+        "id": 21,
+        "name": "Producto 21",
+        "description": "Experimenta el confort absoluto con este diseño innovador que cuida cada detalle de tu postura y descanso.",
+        "price": 38.90,
+        "image_url": "assets/products/product-21.jpg"
+    },
+    {
+        "id": 22,
+        "name": "Producto 22",
+        "description": "Fabricado bajo normativas estrictas de seguridad para ofrecerte tranquilidad total mientras disfrutas de sus amplias ventajas.",
+        "price": 14.25,
+        "image_url": "assets/products/product-22.jpg"
+    },
+    {
+        "id": 23,
+        "name": "Producto 23",
+        "description": "Sistema integrado que facilita las tareas más complejas convirtiéndolas en procesos rápidos y muy sencillos de ejecutar.",
+        "price": 92.40,
+        "image_url": "assets/products/product-23.jpg"
+    },
+    {
+        "id": 24,
+        "name": "Producto 24",
+        "description": "Colores vibrantes y texturas únicas definen esta pieza especial que resaltará en cualquier colección de productos exclusivos.",
+        "price": 27.85,
+        "image_url": "assets/products/product-24.jpg"
+    },
+    {
+        "id": 25,
+        "name": "Producto 25",
+        "description": "Equilibrio perfecto entre ligereza y resistencia estructural ideal para llevar contigo durante tus viajes y aventuras diarias.",
+        "price": 59.99,
+        "image_url": "assets/products/product-25.jpg"
+    },
+    {
+        "id": 26,
+        "name": "Producto 26",
+        "description": "Su interfaz intuitiva permite una curva de aprendizaje rápida para que aproveches todas sus funciones sin demoras.",
+        "price": 48.30,
+        "image_url": "assets/products/product-26.jpg"
+    },
+    {
+        "id": 27,
+        "name": "Producto 27",
+        "description": "Resistente al agua y al polvo es perfecto para exteriores garantizando durabilidad extrema bajo condiciones climáticas adversas.",
+        "price": 72.15,
+        "image_url": "assets/products/product-27.jpg"
+    },
+    {
+        "id": 28,
+        "name": "Producto 28",
+        "description": "Un elemento decorativo y funcional que transforma ambientes comunes en espacios llenos de personalidad y mucho estilo.",
+        "price": 18.50,
+        "image_url": "assets/products/product-28.jpg"
+    },
+    {
+        "id": 29,
+        "name": "Producto 29",
+        "description": "Mecanismos de precisión que aseguran un funcionamiento silencioso y fluido evitando cualquier tipo de interrupción molesta.",
+        "price": 119.50,
+        "image_url": "assets/products/product-29.jpg"
+    },
+    {
+        "id": 30,
+        "name": "Producto 30",
+        "description": "La mejor opción para quienes valoran la simplicidad y la efectividad en un solo paquete muy accesible.",
+        "price": 9.99,
+        "image_url": "assets/products/product-30.jpg"
+    },
+    {
+        "id": 31,
+        "name": "Producto 31",
+        "description": "Desarrollado por expertos en ergonomía para prevenir la fatiga durante largas sesiones de trabajo o estudio intenso.",
+        "price": 55.60,
+        "image_url": "assets/products/product-31.jpg"
+    },
+    {
+        "id": 32,
+        "name": "Producto 32",
+        "description": "Una pieza versátil que combina múltiples utilidades en un solo dispositivo ahorrando espacio y dinero a la vez.",
+        "price": 41.25,
+        "image_url": "assets/products/product-32.jpg"
+    },
+    {
+        "id": 33,
+        "name": "Producto 33",
+        "description": "Acero inoxidable de grado superior que garantiza higiene y resistencia ante la corrosión en cualquier tipo de cocina.",
+        "price": 66.70,
+        "image_url": "assets/products/product-33.jpg"
+    },
+    {
+        "id": 34,
+        "name": "Producto 34",
+        "description": "Optimizado para un consumo energético bajo ayudándote a ahorrar mientras disfrutas de un rendimiento de primer nivel.",
+        "price": 84.90,
+        "image_url": "assets/products/product-34.jpg"
+    },
+    {
+        "id": 35,
+        "name": "Producto 35",
+        "description": "Incluye funciones inteligentes que se adaptan a tus hábitos diarios mejorando significativamente tu calidad de vida general.",
+        "price": 102.35,
+        "image_url": "assets/products/product-35.jpg"
+    },
+    {
+        "id": 36,
+        "name": "Producto 36",
+        "description": "Elegancia atemporal que nunca pasa de moda convirtiéndose en una inversión inteligente para tu guardarropa o el hogar.",
+        "price": 22.45,
+        "image_url": "assets/products/product-36.jpg"
+    },
+    {
+        "id": 37,
+        "name": "Producto 37",
+        "description": "Sistema de seguridad avanzado integrado para proteger lo que más quieres con la mayor tecnología disponible hoy.",
+        "price": 95.00,
+        "image_url": "assets/products/product-37.jpg"
+    },
+    {
+        "id": 38,
+        "name": "Producto 38",
+        "description": "Su diseño modular permite futuras expansiones y personalizaciones según las necesidades específicas de cada usuario individualmente.",
+        "price": 51.80,
+        "image_url": "assets/products/product-38.jpg"
+    },
+    {
+        "id": 39,
+        "name": "Producto 39",
+        "description": "Materiales reciclados procesados con alta tecnología para ofrecer un producto ecológico de altísima resistencia y belleza.",
+        "price": 13.60,
+        "image_url": "assets/products/product-39.jpg"
+    },
+    {
+        "id": 40,
+        "name": "Producto 40",
+        "description": "Facilidad de limpieza y mantenimiento mínimo hacen de este artículo la solución ideal para personas con poco tiempo.",
+        "price": 31.20,
+        "image_url": "assets/products/product-40.jpg"
+    },
+    {
+        "id": 41,
+        "name": "Producto 41",
+        "description": "Máxima portabilidad gracias a su estuche protector incluido que garantiza la integridad del producto en cada traslado.",
+        "price": 47.95,
+        "image_url": "assets/products/product-41.jpg"
+    },
+    {
+        "id": 42,
+        "name": "Producto 42",
+        "description": "Ajustes precisos que permiten una configuración totalmente personalizada para adaptarse a las preferencias de cada cliente distinto.",
+        "price": 78.40,
+        "image_url": "assets/products/product-42.jpg"
+    },
+    {
+        "id": 43,
+        "name": "Producto 43",
+        "description": "Iluminación eficiente y cálida que crea una atmósfera acogedora en cualquier habitación de tu casa de forma inmediata.",
+        "price": 26.50,
+        "image_url": "assets/products/product-43.jpg"
+    },
+    {
+        "id": 44,
+        "name": "Producto 44",
+        "description": "Componentes internos reforzados para soportar un uso continuo sin perder velocidad ni capacidad de respuesta operativa.",
+        "price": 118.99,
+        "image_url": "assets/products/product-44.jpg"
+    },
+    {
+        "id": 45,
+        "name": "Producto 45",
+        "description": "Textura antideslizante que proporciona un agarre seguro y firme incluso en las situaciones más exigentes de uso.",
+        "price": 11.25,
+        "image_url": "assets/products/product-45.jpg"
+    },
+    {
+        "id": 46,
+        "name": "Producto 46",
+        "description": "Gran capacidad de almacenamiento en un tamaño reducido para mantener todos tus objetos organizados y siempre a mano.",
+        "price": 58.70,
+        "image_url": "assets/products/product-46.jpg"
+    },
+    {
+        "id": 47,
+        "name": "Producto 47",
+        "description": "Compatible con la mayoría de accesorios estándar del mercado facilitando su integración en sistemas ya existentes.",
+        "price": 39.90,
+        "image_url": "assets/products/product-47.jpg"
+    },
+    {
+        "id": 48,
+        "name": "Producto 48",
+        "description": "Diseño aerodinámico que mejora la eficiencia y reduce el ruido ambiental durante su funcionamiento a plena potencia.",
+        "price": 82.15,
+        "image_url": "assets/products/product-48.jpg"
+    },
+    {
+        "id": 49,
+        "name": "Producto 49",
+        "description": "Certificado por organismos internacionales garantizando que recibes un producto seguro confiable y de alta gama técnica.",
+        "price": 93.60,
+        "image_url": "assets/products/product-49.jpg"
+    },
+    {
+        "id": 50,
+        "name": "Producto 50",
+        "description": "La culminación de años de investigación para ofrecerte la experiencia definitiva en confort y tecnología aplicada.",
+        "price": 109.99,
+        "image_url": "assets/products/product-50.jpg"
+    }
 ]
