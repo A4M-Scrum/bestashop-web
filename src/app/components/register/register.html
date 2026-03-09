@@ -1,0 +1,35 @@
+<form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+
+  <div>
+    <label for="name">Nombre</label>
+    <input
+      id="name"
+      type="text"
+      name="name"
+      [(ngModel)]="name"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="email">Correo electrónico</label>
+    <input
+      id="email"
+      type="email"
+      name="email"
+      [(ngModel)]="email"
+      required
+    />
+  </div>
+
+  <button type="submit">
+    Registrarse
+  </button>
+
+  @if (message) {
+    <p>
+      {{ message }}
+    </p>
+  }
+
+</form>
